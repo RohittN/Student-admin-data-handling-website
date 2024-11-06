@@ -1,0 +1,38 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<div class="student-profile-container">
+    <div class="student-profile-header">
+        <h1>Student Profile</h1>
+    </div>
+    <div class="student-profile-card">
+        <div class="student-profile-field">
+            <p>First Name:</p>
+            <p>{{ student.FirstName }}</p>
+        </div>
+        <div class="student-profile-field">
+            <p>Last Name:</p>
+            <p>{{ student.LastName }}</p>
+        </div>
+        <div class="student-profile-field">
+            <p>Email:</p>
+            <p>{{ student.Email }}</p>
+        </div>
+        <div class="student-profile-field">
+            <p>Phone Number:</p>
+            <p>{{ student.Phonenumber }}</p>
+        </div>
+        <div class="student-profile-field">
+            <p>Username:</p>
+            <p>{{ student.Username }}</p>
+        </div>
+        <div class="student-profile-actions">
+            <!-- <button href="{ % url  %}">Update Profile</button> -->
+            <a href="{% url 'editprof' id=student.id %}">Update Profile</a>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

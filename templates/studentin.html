@@ -1,0 +1,109 @@
+{% block content %}
+{% load static %}
+{% include 'header.html' %}
+
+
+ <!-- Home -->
+ <div class="image-container">
+    <img src= "{% static 'images/stdschool1.jpg ' %}" alt="Image is having an issue.." srcset="">
+    <div class="image-text"><span class="justice">KNOWLEDGE </span> <span class="denied">TRANSFORMS EXPERIENCE</span></div>
+  </div>
+
+    <!-- About Us -->
+    <div class="about-text" id="about">
+        <span class="about">ABOUT OUR</span> <span class="firm">COLLEGE</span>
+    </div>
+
+<section class="py-5">
+    <div class="col-md-12">
+  </div>
+    <div class="row align-items-center">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <img src="{% static 'images/stdschool4.jpg ' %}" alt="....." class="img-fluid rounded">
+      </div>
+      <div class="col-md-4">
+        <p class="text-center">
+          ABC School is a modern educational institution committed to providing comprehensive and high-quality learning experiences for students. With a dedicated team of experienced educators,
+            ABC School offers a diverse curriculum that includes core academic subjects, arts, sports, and extracurricular activities. 
+            The school's mission is to create a supportive and inclusive learning environment where students are encouraged to explore their potential, 
+            develop critical thinking skills, and prepare for future academic and professional challenges. State-of-the-art facilities, 
+            innovative teaching methods, and a focus on technology integration set ABC School apart as a leading educational institution in the region.
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img src="{% static 'images/stdschool2.jpg ' %}" alt="....." class="img-fluid rounded">
+      </div>
+    </div>
+</section>
+<!-- course and branches -->
+<div class="candb-text" id="course">
+  <span class="course">COURSE</span> <span class="branch">& BRANCH</span></div>
+
+  <div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- First Row -->
+        <div class="col">
+          <div class="card border-success h-100">
+                <div class="card-header">Engineering</div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">Computer Science Engineering</h5>
+                    <h5 class="card-title">Mechanical Engineering</h5>
+                    <h5 class="card-title">Electrical Engineering</h5>
+                    <h5 class="card-title">Civil Engineering</h5> 
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card border-success h-100">
+                <div class="card-header">Medical Sciences</div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">MBBS (Bachelor of Medicine)</h5>
+                  <h5 class="card-title">BDS (Dental Surgery)</h5>
+                  <h5 class="card-title">Pharmacy</h5>
+                  <h5 class="card-title">Physiotherapy</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+          <div class="card border-success h-100">
+                <div class="card-header">Business Studies</div>
+                <div class="card-body text-success">
+                  <h5 class="card-title">Finance</h5>
+                  <h5 class="card-title">Marketing</h5>
+                  <h5 class="card-title">International Business</h5>
+                  <h5 class="card-title">Entrepreneurship</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- contact us -->
+<div class="contact-text" id="enquiry">
+  <span class="for">FOR</span> <span class="enquiry">ENQUIRY</span></div>
+<section class="contact-section">
+  <div class="contt">
+      <form class="row g-3" action="/studentform/" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+          <div class="col-md-12">
+              <input type="text" class="form-control" id="inputname4" placeholder="Enter the Name of the Student" name="Name" required>
+          </div>
+          <div class="col-md-12">
+              <input type="number" class="form-control" id="inputnumber4" placeholder="Enter the Phone number" name="Phone" required>
+          </div>
+          <div class="col-md-12">
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Enter the EmailID" name="Email" required>
+          </div>
+          <div class="col-md-12">
+          <input type="text" class="form-control" id="inputmessage4" placeholder="Enter the message" name="Message" required>
+          </div>
+          <div class="col-12">
+              <button type="submit" class="btn btn-primary" style="background-color: black; border: none;">Submit</button>
+          </div>
+      </form>
+  </div>
+</section>
+
+{% include 'footer.html' %}
+
+{% endblock %}
